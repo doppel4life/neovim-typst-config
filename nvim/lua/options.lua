@@ -1,5 +1,8 @@
 local opt = vim.opt
 
+vim.g.mapleader      = " "
+vim.g.maplocalleader = " "
+
 opt.number = true
 opt.relativenumber = true
 opt.cursorline = true
@@ -23,9 +26,15 @@ opt.clipboard = "unnamedplus"
 opt.mouse = "a"
 
 opt.updatetime = 300
-opt.completeopt = { "menuone", "noinsert", "noselect" }
+opt.completeopt = { "fuzzy", "menuone", "noinsert", "noselect" }
+
+vim.opt.wrap           = false
+vim.opt.swapfile       = false
+vim.opt.undofile       = true
+
 opt.termguicolors = true
+
+vim.opt.spelllang = "en,fr"
 
 vim.cmd("syntax on")
 vim.cmd("filetype plugin indent on")
-
