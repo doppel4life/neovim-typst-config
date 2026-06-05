@@ -34,6 +34,7 @@
                 pkgs.harper
                 pkgs.ltex-ls
                 pkgs.git
+                pkgs.lualine-nvim
             ];
 
             shellHook =''
