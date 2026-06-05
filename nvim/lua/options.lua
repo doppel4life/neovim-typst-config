@@ -34,7 +34,5 @@ vim.opt.undofile       = true
 
 opt.termguicolors = true
 
-vim.opt.spelllang = "en,fr"
-
 vim.cmd("syntax on")
 vim.cmd("filetype plugin indent on")
