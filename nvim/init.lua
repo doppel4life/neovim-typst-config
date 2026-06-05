@@ -1,7 +1,7 @@
 require("options")
 require("treesitter")
 require("lsp")
-require("lualine")
+require("statusline")
 require("keymaps")
 
 require("colorscheme")

@@ -7,7 +7,7 @@ opt.number = true
 opt.relativenumber = true
 opt.cursorline = true
 opt.signcolumn = "yes"
-opt.showmode = true
+opt.showmode = false
 
 opt.expandtab = true
 opt.tabstop = 4
