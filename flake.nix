@@ -25,6 +25,10 @@
         };
 
         in {
+            packages.${system} = {
+                default = neovimWithPlugins;
+                typst-nvim = neovimWithPlugins;
+            };
             devShells.${system}.default = pkgs.mkShell {
             name = "typst-nvim";
 
