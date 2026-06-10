@@ -24,16 +24,25 @@
             };
         };
 
+        typstNvimBin = pkgs.symlinkJoin {
+          name = "typst-nvim";
+          paths = [ neovimWithPlugins ];
+          buildInputs = [ pkgs.makeWrapper ];
+          postBuild = ''
+            mv $out/bin/nvim $out/bin/typst-nvim
+          '';
+        };
+
         in {
             packages.${system} = {
-                default = neovimWithPlugins;
-                typst-nvim = neovimWithPlugins;
+                default = typstNvimBin;
+                typst-nvim = typstNvimBin;
             };
             devShells.${system}.default = pkgs.mkShell {
             name = "typst-nvim";
 
             packages = [
-                neovimWithPlugins
+                typstNvimBin
                 pkgs.typst
                 pkgs.tinymist
                 pkgs.harper
