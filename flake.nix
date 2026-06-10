@@ -31,7 +31,7 @@
           postBuild = ''
             makeWrapper ${neovimWithPlugins}/bin/nvim $out/bin/typst-nvim \
               --set NVIM_APPNAME nvim \
-              --set VIMINIT "source ${./nvim/init.lua}"
+              --set XDG_CONFIG_HOME "${self}"
           '';
         };
 
