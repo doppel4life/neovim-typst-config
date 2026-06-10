@@ -31,7 +31,7 @@
           postBuild = ''
             makeWrapper ${neovimWithPlugins}/bin/nvim $out/bin/typst-nvim \
               --set NVIM_APPNAME nvim \
-              --set XDG_CONFIG_HOME "${self}"
+              --set XDG_CONFIG_HOME "${self}" \
               --set VIMINIT "lua dofile('${self}/nvim/init.lua')"
           '';
         };
