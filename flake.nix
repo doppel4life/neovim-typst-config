@@ -27,9 +27,11 @@
         typstNvimBin = pkgs.symlinkJoin {
           name = "typst-nvim";
           paths = [ neovimWithPlugins ];
-          buildInputs = [ pkgs.makeWrapper ];
+          nativeBuildInputs = [ pkgs.makeWrapper ];
           postBuild = ''
-            mv $out/bin/nvim $out/bin/typst-nvim
+            makeWrapper ${neovimWithPlugins}/bin/nvim $out/bin/typst-nvim \
+              --set NVIM_APPNAME nvim \
+              --set VIMINIT "source ${./nvim/init.lua}"
           '';
         };
 
